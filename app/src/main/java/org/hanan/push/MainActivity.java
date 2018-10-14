@@ -42,6 +42,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class MainActivity extends AppCompatActivity {
 
     private final static String TAG = "MainActivity";
+    private final static String IP = "192.168.2.108";
 
     private TextView text;
     private String classToken;
@@ -140,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             HashMap<String, String> map = new HashMap<>();
             map.put("isGcm" ,"false");
             map.put("token" ,classToken);
-            String response = performPostCall("http://10.0.0.4:8080/api/v1/token", map);
+            String response = performPostCall("http://" + IP + ":8080/api/v1/token", map);
             Log.i(TAG, "send to server " + response);
             return "Executed";
         }
